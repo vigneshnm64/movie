@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import getConfig from 'next/config'
-import Information from '../src/Components/Information'
+import Information from '../src/Components/info/Information'
 import { useState } from 'react'
 import { useEffect } from 'react'
 

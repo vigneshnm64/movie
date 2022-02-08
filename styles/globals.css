@@ -44,7 +44,7 @@ a {
   margin-right: auto;
 }
 
-.movie-overview{
+.hover:hover{
   position:absolute;
   bottom:0;
   top:0;
@@ -57,7 +57,7 @@ a {
   color: white;
 }
 
-.movie:hover .movie-overview{
+.hover:hover{
   transform: translate(0);
 } 
 
@@ -126,3 +126,5 @@ a {
           outline: none;
           box-shadow: rgb(139 0 255 / 40%) 5px 10px 10px -4px;
 }
+
+

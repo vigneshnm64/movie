@@ -76,7 +76,6 @@ export default function Home(intialData) {
 
 
       <Head>
-        <h1>MOVIE APP</h1>
         <link rel="stylesheet" href="/styles.css"></link>
       </Head>
 

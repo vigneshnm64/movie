@@ -8,10 +8,8 @@ import { FaSearch } from 'react-icons/fa';
 
 const { serverRuntimeConfig, publicRuntimeConfig } = getConfig()
 
-   export default function Back(intialData) {
-   const [searchResult, setSearchRsults] = useState([])
-
-
+export default function Back(intialData) {
+  const [searchResult, setSearchRsults] = useState([])
 
   useEffect(() => {
     setSearchRsults(intialData.trendingMovies.results)
@@ -31,7 +29,7 @@ const { serverRuntimeConfig, publicRuntimeConfig } = getConfig()
           <div className="back-image">
 
             <div className="search">
-              
+
             </div>
           </div>
         </div>
@@ -59,8 +57,6 @@ const { serverRuntimeConfig, publicRuntimeConfig } = getConfig()
     </div>
   )
 }
-
-
 
 export async function getServerSideProps(context) {
   let trendingMovies = await fetch
