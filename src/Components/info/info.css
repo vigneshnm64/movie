@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+.details{
+    width: 100%;
+    font-family: Abel,sans-serif;
+}
+div{
+    display: block;
+}
+.detail-image{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0) 
+    39%, rgba(0, 0, 0, 0) 41%, 
+    rgba(0, 0, 0, 0.65) 100%),
+    initial;
+    background-position-x: center, center !important;
+    background-position-y: center, center !important;
+    background-size: 100%, cover !important;
+    animation: 1s ease 0s 1 normal none running animateHeroimage;
+    background-position: center center, center center !important;
+}
+.MovName{
+    color: white;
+    padding-bottom: 30px;
+    font-family: Abel,sans-serif;
+}
+.Descrptn{
+    color: white;
+    font-family: Abel,sans-serif;
+    font-size: 18px;
+}
+.content{
+    width: 80%;
+    padding: 20px;
+    position: absolute;
+    bottom: 40px;
+}
+
+@media screen and (min-width:1000px) {
+    .content{
+        width: 50%;
+        margin-left: 20px;
+    }
+    .Descrptn{
+        font-size: 1.5rem;
+    }
+}

@@ -24,6 +24,9 @@ export default function Home(intialData) {
     setSearchRsults(intialData.popularMovies.results)
   }, [intialData])
 
+  useEffect(()=> {
+    console.log("still",searchParam)
+  },[searchParam])
 
   useEffect(() => {
     console.log("my", intialData.popularMovies.results)
@@ -96,7 +99,7 @@ export default function Home(intialData) {
     (`https://api.themoviedb.org/3/movie/popular?api_key=0122f66b835be1351367d17f60ca287b&language=en-US&page=1`)
      popularMovies = await popularMovies.json()
    console.log(popularMovies)
-  return {
+   return {
     props: { popularMovies: popularMovies }, // will be passed to the page component as props
   }
 }

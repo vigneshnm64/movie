@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router'
 import Information from '../src/Components/info/Information';
-import Header from '../src/Header/Header'
+import HeaderInfo from '../src/Components/info-header/HeaderInfo'
+
 
 const MovieDetails = () => {
     const [Movieimage, SetMovieimage] = useState("")
@@ -22,6 +23,8 @@ const MovieDetails = () => {
         InfoDetails()
         CastDetails()
     }, [])
+
+    console.log("raid",router)
 
     const InfoDetails = () => {
         const configObj = {
@@ -45,9 +48,7 @@ const MovieDetails = () => {
             .catch((error) => console.log("mill", error))
     }
 
-
-
-    const CastDetails = () => {
+       const CastDetails = () => {
         const configObj = {
             method: "get",
             url: `https://api.themoviedb.org/3/movie/${id}/credits?api_key=4eb0f63066123e2dc99ea2a934d543da`,
@@ -68,18 +69,21 @@ const MovieDetails = () => {
     return (
 
 
-        <div className='container'>
-            <Header />
-            <img src={Image_API + Movieimage}></img>
+        <div className='details'>
+            <HeaderInfo />
+            <img className='detail-image' src={Image_API + Movieimage}></img>
             <h1>{Movietitle}</h1>
             <h6>{Avragevote}</h6>
             <h1>{budget}</h1>
             <h1>{revenue}</h1>
             <h1>{runtime}</h1>
             <p>{Owerview}</p>
+
+            <h1>ACTORS</h1>
             <div className='movie-search'>
 
                 {
+
                     Moviecast.map((data) => (
                         <Information
                             key={data.id}
