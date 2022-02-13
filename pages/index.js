@@ -24,22 +24,22 @@ export default function Home(intialData) {
     setSearchRsults(intialData.popularMovies.results)
   }, [intialData])
 
-  useEffect(()=> {
-    console.log("still",searchParam)
-  },[searchParam])
+  useEffect(() => {
+    console.log("still", searchParam)
+  }, [searchParam])
 
   useEffect(() => {
     console.log("my", intialData.popularMovies.results)
   }, [intialData])
 
   useEffect(() => {
-    console.log("po",intialData)
-    },[intialData])
+    console.log("po", intialData)
+  }, [intialData])
 
 
-  function mapping () {
+  function mapping() {
     if (searchParam) {
-       const myResult = searchResult.filter((data) => {
+      const myResult = searchResult.filter((data) => {
         return data.title.toLowerCase().includes
           (searchParam.toLowerCase())
       })
@@ -94,12 +94,12 @@ export default function Home(intialData) {
   )
 }
 
-  export async function getServerSideProps(context) {
+export async function getServerSideProps(context) {
   let popularMovies = await fetch
     (`https://api.themoviedb.org/3/movie/popular?api_key=0122f66b835be1351367d17f60ca287b&language=en-US&page=1`)
-     popularMovies = await popularMovies.json()
-   console.log(popularMovies)
-   return {
+  popularMovies = await popularMovies.json()
+  console.log(popularMovies)
+  return {
     props: { popularMovies: popularMovies }, // will be passed to the page component as props
   }
 }

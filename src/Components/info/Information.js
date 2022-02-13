@@ -1,5 +1,6 @@
-const Information=({name,character,profile_path,budget,revenue,runtime}) => {
+const Information=({name,character,profile_path,budget,revenue,runtime,poster_path}) => {
 const Image_API ='https://image.tmdb.org/t/p/w500/' ;
+
 
 return(
     <div className="movie">
@@ -10,6 +11,7 @@ return(
     <div className="movie-charcter">{character}
     <img src={Image_API + profile_path} alt={name}/>
     </div>
+    <div> <img src={Image_API + poster_path} alt={name}/></div>
     </div>
 )
 

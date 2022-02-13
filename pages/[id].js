@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useRouter } from 'next/router'
 import Information from '../src/Components/info/Information';
 import HeaderInfo from '../src/Components/info-header/HeaderInfo'
+import Link from 'next/link';
 
 
 const MovieDetails = () => {
@@ -14,6 +15,7 @@ const MovieDetails = () => {
     const [budget, Setbuget] = useState("")
     const [revenue, Setrevenue] = useState("")
     const [runtime, Setruntime] = useState("")
+    const [poster, Setposter] = useState("")
 
     const router = useRouter()
     const { id } = router.query
@@ -24,7 +26,7 @@ const MovieDetails = () => {
         CastDetails()
     }, [])
 
-    console.log("raid",router)
+    console.log("raid", router)
 
     const InfoDetails = () => {
         const configObj = {
@@ -44,11 +46,12 @@ const MovieDetails = () => {
                 Setbuget(responce.data.budget)
                 Setrevenue(responce.data.revenue)
                 Setruntime(responce.data.runtime)
+                Setposter(responce.data.poster_path)
             })
             .catch((error) => console.log("mill", error))
     }
 
-       const CastDetails = () => {
+    const CastDetails = () => {
         const configObj = {
             method: "get",
             url: `https://api.themoviedb.org/3/movie/${id}/credits?api_key=4eb0f63066123e2dc99ea2a934d543da`,
@@ -69,16 +72,51 @@ const MovieDetails = () => {
     return (
 
 
-        <div className='details'>
+        <div className='header'>
             <HeaderInfo />
-            <img className='detail-image' src={Image_API + Movieimage}></img>
-            <h1>{Movietitle}</h1>
-            <h6>{Avragevote}</h6>
-            <h1>{budget}</h1>
-            <h1>{revenue}</h1>
-            <h1>{runtime}</h1>
-            <p>{Owerview}</p>
+            <div className='header_'>
+                <Link href={"/"}>
+                    <h1 className='line'>Home</h1>
+                </Link>
+                <p className='line'>|</p>
+                <p className='line'>{Movietitle}</p>
+            </div>
 
+                <div className='background_div'> 
+                <img className='banner_drop' src={Image_API + Movieimage}></img>
+                   <div className='background_one'>
+                   <div className='details_'>
+                    <h1 className='title'>{Movietitle}</h1>
+                    <h3 className='plot-one'>PLOT</h3>
+                    <p className='plot'>{Owerview}</p>
+                    <h3 className='my-rating'>IMDB RATING</h3>
+                    <p className='rating'>{Avragevote}</p>
+                    </div>
+                 </div>
+                 <img className='img_two' src={Image_API + poster}></img>
+                </div>
+
+
+
+                <div className='box'>
+                     <div className='box_o'>
+                       <p className='box_'>Running Time:</p>
+                       <p className='box_'>{runtime} minutes</p>
+                       </div>
+                
+                       <div className='box_o'>
+                            <p className='box_'>Budget:</p>
+                            <p className='box_'>${budget}</p>
+                            </div>
+                
+                        <div className='box_o'>
+                        <p className='box_'>Revenue:</p>
+                        <p className='box_'>${revenue}</p>
+                    </div>
+                        </div>
+            
+            
+             
             <h1>ACTORS</h1>
             <div className='movie-search'>
 
@@ -96,6 +134,7 @@ const MovieDetails = () => {
                 }
             </div>
         </div>
+
 
     )
 }
