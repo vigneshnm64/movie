@@ -49,6 +49,7 @@ export default function Home(intialData) {
           ? myResult.map((each) => (
             <Movies
               index={each.id}
+              key={each.id}
               title={each.title}
               poster_path={each.poster_path}
               overview={each.overview}
@@ -61,6 +62,7 @@ export default function Home(intialData) {
         searchResult.slice(0, Visible).map((each) => (
           <Movies
             index={each.id}
+            key={each.id}
             title={each.title}
             poster_path={each.poster_path}
             overview={each.overview}

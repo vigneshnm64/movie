@@ -34,6 +34,7 @@ const { serverRuntimeConfig, publicRuntimeConfig } = getConfig()
                     return (
                         <Information
                             overview={each.overview}
+                            key={index}
                         />
                     )
 

@@ -88,7 +88,7 @@ div{
      font-size: 18px;
      width: 55%;
      position: absolute;
-     top: 25%;
+     top:35%;
 }
 
 .plot-one{
@@ -196,13 +196,13 @@ div{
     .details_{
                 color: white;
                 font-weight: bolder;
-                height: 95%;
+                height: 97%;
                 width: 80%;
                 background-color: black;
                  opacity: 0.6;
                  border-radius: 20px;
                  position:absolute;
-                 top: 10px;
+                 top: 5px;
                  left: 8%;
                 
                  
