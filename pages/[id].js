@@ -85,15 +85,16 @@ const MovieDetails = () => {
                 <div className='background_div'> 
                 <img className='banner_drop' src={Image_API + Movieimage}></img>
                    <div className='background_one'>
+                   <img className='img_two' src={Image_API + poster}></img>
                    <div className='details_'>
-                    <h1 className='title'>{Movietitle}</h1>
+                    <h1 className='m-title'>{Movietitle}</h1>
                     <h3 className='plot-one'>PLOT</h3>
                     <p className='plot'>{Owerview}</p>
                     <h3 className='my-rating'>IMDB RATING</h3>
                     <p className='rating'>{Avragevote}</p>
                     </div>
                  </div>
-                 <img className='img_two' src={Image_API + poster}></img>
+                 
                 </div>
 
 
